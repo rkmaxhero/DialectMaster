@@ -8,9 +8,8 @@ import {
 
 import CustomButton from './atom/CustomButton';
 import CustomTextInput from './atom/CustomTextInput';
-import login from './pages/login';
 
-export default function App() {
+export default function login() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar></StatusBar>
@@ -25,6 +24,7 @@ export default function App() {
         <View style={styles.button}>
           <CustomButton text ="login"/>
         </View>
+        <Text>Don't have an account?</Text>
         <View style={styles.button}>
           <CustomButton text ="sign up"/>
         </View>
@@ -32,43 +32,3 @@ export default function App() {
     </SafeAreaView>
   );
 }
-
-/*
-DOCUMENTATION FORMAT: 
-
-"FunctionName"
-
-Props:
-    myProp= num / "string" / {object}
-        myPropDescription
-
-Notes:
-    This is a useful note for my file / component / atom / etc
-*/
-
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems:'center',
-    justifyContent: 'space-around'
-  },
-
-  input: {
-    width: '90%',
-    display: 'flex',
-    alignItems: 'center',
-  },
-
-  button: {
-    width: 174,
-    height: 57,
-    margin: '2%', 
-  },
-
-  title: {
-    fontSize: 36,
-    textTransform: 'uppercase',
-  }
-});
