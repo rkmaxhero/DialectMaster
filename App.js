@@ -11,6 +11,7 @@ import CustomButton from './atom/CustomButton';
 import CustomTextInput from './atom/CustomTextInput';
 import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
+import Dashboard from './pages/dashboard'
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -27,6 +28,10 @@ export default function App() {
         <Stack.Screen 
           name="Signup" 
           component={SignupPage} 
+        />
+        <Stack.Screen
+          name="Dialect Master"
+          component={Dashboard}
         />
       </Stack.Navigator>
     </NavigationContainer>

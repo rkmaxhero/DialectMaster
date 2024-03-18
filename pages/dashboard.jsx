@@ -9,26 +9,12 @@ import {
 import CustomButton from './../atom/CustomButton';
 import CustomTextInput from './../atom/CustomTextInput';
 
-export default function LoginPage({navigation}) {
+export default function Dashboard({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar></StatusBar>
-      <Text style={styles.title}>Dialect Master</Text>
-
-      <Text style={styles.normalText}>Login</Text>
-      <View style={styles.input}>
-        <CustomTextInput label="Email"/>
-        <CustomTextInput label="Password"/>
-      </View>
-
-      <View style={styles.centerAlign}> 
-        <View style={styles.button}>
-          <CustomButton text ="login" onPress={() => navigation.navigate('Dialect Master')}/>
-        </View>
-        <Text style={styles.normalText}>Don't have an account?</Text>
-        <View style={styles.button}>
-          <CustomButton text ="sign up" onPress={() => navigation.navigate('Signup')}/>
-        </View>
+      <View style={styles.centerAlign}>
+        <Text style={styles.normalText}>What do you want to learn today?</Text>
       </View>
     </SafeAreaView>
   );
