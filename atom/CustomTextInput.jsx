@@ -5,7 +5,7 @@ export default function (props) {
     return(
         <>
         <Text style={styles.label}>{props.label}</Text>
-        <TextInput style={styles.field}>{props.placeholder}</TextInput>
+        <TextInput style={styles.field} textAlign={'center'}>{props.placeholder}</TextInput>
         </>
     );
 }

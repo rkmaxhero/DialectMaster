@@ -2,7 +2,7 @@ import { Text, StyleSheet, TouchableOpacity,} from 'react-native';
 
 export default function CustomButton (props) {
     return (
-        <TouchableOpacity style={styles.button} activeOpacity={0.75}>
+        <TouchableOpacity style={styles.button} activeOpacity={0.75} onPress={props.onPress}>
           <Text style={styles.text}>{props.text}</Text>
         </TouchableOpacity>
     );
@@ -44,6 +44,9 @@ Size your buttons appropriately in the page you are implementing
 Props: 
     text="myText"
         when you want to add a text element within the button
+
+    onPress=onPress()
+        what the button will do when pressed
 
 
 */

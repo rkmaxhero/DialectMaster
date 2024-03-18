@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,30 +9,48 @@ import {
 
 import CustomButton from './atom/CustomButton';
 import CustomTextInput from './atom/CustomTextInput';
-import login from './pages/login';
+import LoginPage from './pages/login';
+import SignupPage from './pages/signup';
+import { NavigationContainer } from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar></StatusBar>
-      <Text style={styles.title}>Dialect Master</Text>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={LoginPage}
+        />
+        <Stack.Screen 
+          name="Signup" 
+          component={SignupPage} 
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+    // <SafeAreaView style={styles.container}>
+    //   <StatusBar></StatusBar>
+    //   <Text style={styles.title}>Dialect Master</Text>
 
-      <View style={styles.input}>
-        <CustomTextInput label="Email"/>
-        <CustomTextInput label="Password"/>
-      </View>
+    //   <View style={styles.input}>
+    //     <CustomTextInput label="Email"/>
+    //     <CustomTextInput label="Password"/>
+    //   </View>
 
-      <View> 
-        <View style={styles.button}>
-          <CustomButton text ="login"/>
-        </View>
-        <View style={styles.button}>
-          <CustomButton text ="sign up"/>
-        </View>
-      </View>
-    </SafeAreaView>
+    //   <View> 
+    //     <View style={styles.button}>
+    //       <CustomButton text ="login"/>
+    //     </View>
+    //     <View style={styles.button}>
+    //       <CustomButton text ="sign up"/>
+    //     </View>
+    //   </View>
+    // </SafeAreaView>
   );
 }
+
 
 /*
 DOCUMENTATION FORMAT: 
