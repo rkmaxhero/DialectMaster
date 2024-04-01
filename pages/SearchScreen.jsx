@@ -8,8 +8,6 @@ const SearchScreen = () => {
   // Simulate fetching search results
   const handleSearch = (query) => {
     setSearchQuery(query);
-    // Here you would fetch and filter data based on the searchQuery
-    // For demonstration, we're setting static data
     setResults([
       { id: '1', name: 'Example Result 1' },
       { id: '2', name: 'Example Result 2' },
