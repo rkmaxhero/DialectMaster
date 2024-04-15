@@ -1,10 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import * as Progress from 'react-native-progress';
 import CustomButton from '../atom/CustomButton';
 
-const RegionSelectMap = ({navigation}) => {
-  const [selectedRegion] = useState('Select Region');
+const SelectedRegionScreen = ({navigation, route}) => {
+  // console.log(route.params);
+  const [selectedRegion, setSelectedRegion] = useState('');
+  useEffect(() => {
+    if (route.params.name) {
+      setSelectedRegion(route.params.name);
+    }
+  }, [route.params.name]);
+  const [progress, setProgress] = useState(0); // This should be dynamic based on user's progress
+  const [regionOpacity, setRegionOpacity] = useState({
+    northwestRegion: 0,
+    southwestRegion: 0,
+  });
+  const handleRegionSelect = (regionName) => {
+    // Placeholder for region selection logic
+    console.log("NAVIGATING TO:",regionName);
+  };
+
+  const handleRegionPress = (regionName) => {
+    // region area button click response
+    setSelectedRegion(regionName);
+    if (regionName == 'NORTHEAST REGION') {
+      regionName = 'northwestRegion';
+    }
+    else{
+      regionName = 'southwestRegion';
+    }
+    setRegionOpacity((prevOpacity) => ({
+      ...prevOpacity,
+      [regionName]: 1, // Set the opacity to 1 for the clicked region
+    }));
+    console.log(regionOpacity);
+  };
+
 
   return (
     <View style={styles.container}>
@@ -27,15 +59,38 @@ const RegionSelectMap = ({navigation}) => {
         
         {/* Overlay Touchable Regions */}
         <TouchableOpacity
-          style={[styles.region, styles.northwestRegion]} // Positioning styles specific to the northwest region
-          onPress={() => navigation.navigate('SelectedRegionScreen', {name: 'NORTHEAST REGION'})}
+          style={[styles.region, styles.northwestRegion, { opacity: regionOpacity.northwestRegion }]} // Positioning styles specific to the northwest region
+          onPress={() => handleRegionPress('NORTHEAST REGION')}
         />
         <TouchableOpacity
-          style={[styles.region, styles.southwestRegion]} // Positioning styles specific to the southwest region
-          onPress={() => navigation.navigate('SelectedRegionScreen', {name: 'SOUTHWEST REGION'})}
+          style={[styles.region, styles.southwestRegion, { opacity: regionOpacity.southwestRegion }]} // Positioning styles specific to the southwest region
+          onPress={() => handleRegionPress('SOUTHWEST REGION')}
         />
         {/* ... Additional regions here ... */}
       </View>
+
+      {/* Selected region display */}
+      <View style={styles.selectedRegionContainer}>
+        <Text style={styles.selectedRegionText}>{selectedRegion}</Text>
+        <Progress.Bar
+          progress={selectedRegion.progress}
+          width={500}
+          height={30}
+          color={'#0000FF'} // Blue color for the progress bar
+          backgroundColor = {'#000000'}
+        />
+        <Text style={styles.progressText}>{progress}%</Text>
+      </View>
+
+      {/* Buttons */}
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => handleRegionSelect('Southwest Region')}>
+        <Text style={styles.buttonText}>START LEARNING</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>TEST</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -66,12 +121,11 @@ const styles = StyleSheet.create({
     // Add styles for the search button
   },
   searchText: {
-    fontSize: 50,
+    fontSize: 24,
   },
   mapContainer: {
     // Add styles for map container
-    width: 800,
-    height: 800, // Temporary height for the placeholder
+    height: 200, // Temporary height for the placeholder
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -118,7 +172,7 @@ const styles = StyleSheet.create({
   },
   mapImage: {
     width: '50%', // Ensures the image takes full width of its container
-    height: '500px', // Ensures the image takes full height of its container
+    height: '100%', // Ensures the image takes full height of its container
     resizeMode: 'stretch', // Ensures the entire map is visible and aspect ratio is maintained
   },
   region: {
@@ -150,4 +204,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RegionSelectMap;
+export default SelectedRegionScreen;

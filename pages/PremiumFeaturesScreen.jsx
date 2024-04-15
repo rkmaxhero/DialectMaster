@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const PremiumFeaturesScreen = () => {
+const PremiumFeaturesScreen = ({navigation}) => {
   // State for the countdown timer
   const [timer, setTimer] = useState(30 * 60); // 30 minutes in seconds
 
@@ -24,7 +24,7 @@ const PremiumFeaturesScreen = () => {
 
   // Handle the purchase action
   const handlePurchase = () => {
-    // Integrate with the payment API or navigate to payment screen
+    navigation.navigate('RegionSelectMap');
   };
 
   return (
@@ -45,8 +45,13 @@ const PremiumFeaturesScreen = () => {
       <Text style={styles.timerText}>
         offer expires in {formatTime(timer)}
       </Text>
-      <TouchableOpacity style={styles.purchaseButton} onPress={handlePurchase}>
-        <Text style={styles.purchaseButtonText}>→</Text>
+      <TouchableOpacity style={styles.featureButton} >
+        <Text style={styles.featureText}>SURE!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.featureButton} onPress={handlePurchase}>
+        <Text style={styles.featureText}>
+          NOT THIS TIME
+        </Text>
       </TouchableOpacity>
     </View>
   );
