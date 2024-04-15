@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import * as Progress from 'react-native-progress';
+import CustomButton from '../atom/CustomButton';
 
-const RegionSelectMap = () => {
+const RegionSelectMap = ({navigation}) => {
   const [selectedRegion, setSelectedRegion] = useState('Southwest Region');
   const [progress, setProgress] = useState(0); // This should be dynamic based on user's progress
 
@@ -10,6 +11,12 @@ const RegionSelectMap = () => {
     // Placeholder for region selection logic
     setSelectedRegion(regionName);
   };
+
+  const handleRegionPress = (regionName) => {
+    // region area button click response
+    console.log(regionName, "selected");
+  };
+
 
   return (
     <View style={styles.container}>
@@ -20,12 +27,13 @@ const RegionSelectMap = () => {
         </TouchableOpacity>
         <Text style={styles.title}>DIALECT MASTER</Text>
         <TouchableOpacity style={styles.searchButton}>
-          <Text style={styles.searchText}>🔍</Text>
+          <CustomButton text = '🔍' onPress = {() => navigation.navigate('SearchScreen')} style={styles.searchText}/>
+          {/* <Text style={styles.searchText} onPress = {() => navigation.navigate('PremiumFeaturesScreen')}>🔍</Text> */}
         </TouchableOpacity>
       </View>
 
       {/* Placeholder for map */}
-      <View style={styles.container}>
+      <View style={styles.mapContainer}>
         {/* Map Image */}
         <Image source={require('../component/map.jpg')} style={styles.mapImage} />
         
@@ -134,28 +142,45 @@ const styles = StyleSheet.create({
   container: {
     // Your container styles
   },
+  mapContainer: {
+    // Set the height and width to fit your screen or parent container
+    width: '100%', // You can adjust this percentage as needed
+    height: '100%', // You can adjust this percentage as needed
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+  },
   mapImage: {
-    width: '100%',
-    height: 500, // Replace with the actual height of your image
-    resizeMode: 'contain', // Ensure the entire map is visible
+    width: '50%', // Ensures the image takes full width of its container
+    height: '80%', // Ensures the image takes full height of its container
+    resizeMode: 'stretch', // Ensures the entire map is visible and aspect ratio is maintained
   },
   region: {
     position: 'absolute',
     backgroundColor: 'transparent', // Ensure the touchable area is invisible
+    borderStyle: "solid",
+    borderRadius: 50,
+    borderWidth: 7,
+    borderColor: "rgba(16, 170, 174, 0.2)",
+    elevation: 10,
+    shadowColor: "#10aaae",
+    shadowRadius: 7,
+    shadowOpacity: .5,
+    shadowOffset : { width: 0, height: 10 },
   },
   northwestRegion: {
-    // Use absolute positioning to place the touchable over the northwest region of the image
-    top: 10, // These values are just examples
-    left: 10,
-    width: 100, // These should match the size of the region on your map
-    height: 50,
+    // Position and size for the northwest region based on your map image
+    top: '23%', // Adjust these percentages to match the region's position on your map image
+    left: '60%',
+    width: '15%',
+    height: "25%",
   },
   southwestRegion: {
     // Similarly for the southwest region
-    top: 60,
-    left: 30,
-    width: 100,
-    height: 50,
+    top: "55%",
+    left: "45%",
+    width: "25%",
+    height: "30%",
   },
 });
 

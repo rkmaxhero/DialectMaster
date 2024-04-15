@@ -30,7 +30,7 @@ export default function LoginPage({navigation}) {
           <CustomButton text ="sign up" onPress={() => navigation.navigate('Signup')}/>
         </View>
         <View>
-          <CustomButton text = "premium" onPress = {() => navigation.navigate('Premium')}/>
+          <CustomButton text = "premium" onPress = {() => navigation.navigate('RegionSelectMap')}/>
         </View>
       </View>
     </SafeAreaView>
