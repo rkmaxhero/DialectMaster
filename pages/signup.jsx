@@ -10,6 +10,12 @@ import CustomButton from './../atom/CustomButton';
 import CustomTextInput from './../atom/CustomTextInput';
 
 export default function SignupPage({navigation}) {
+  function handleRegister() {
+    navigation.navigate('Home');
+  }
+  function handleLogin() {
+    navigation.navigate('Login');
+  }
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar></StatusBar>
@@ -23,11 +29,11 @@ export default function SignupPage({navigation}) {
 
       <View style={styles.centerAlign}> 
         <View style={styles.button}>
-          <CustomButton text ="sign up"/>
+          <CustomButton text ="sign up" onPress={() => setTimeout(handleRegister, 100)}/>
         </View>
         <Text style={styles.normalText}>Already have an account?</Text>
         <View style={styles.button}>
-          <CustomButton text ="login" onPress={() => navigation.navigate('Login')}/>
+          <CustomButton text ="login" onPress={() => setTimeout(handleLogin, 100)}/>
         </View>
       </View>
     </SafeAreaView>

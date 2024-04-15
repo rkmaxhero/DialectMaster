@@ -14,6 +14,9 @@ import SignupPage from './pages/signup';
 import Dashboard from './pages/dashboard'
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import QuestionSet1 from './pages/question1';
+import QuestionSet2 from './pages/question2';
+import Question3 from './pages/question3';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,8 +33,16 @@ export default function App() {
           component={SignupPage} 
         />
         <Stack.Screen
-          name="Dialect Master"
+          name="Home"
           component={Dashboard}
+        />
+        <Stack.Screen 
+          name="Questions"
+          component={QuestionSet1}
+        />
+        <Stack.Screen 
+          name="Questions2"
+          component={QuestionSet2}
         />
       </Stack.Navigator>
     </NavigationContainer>
