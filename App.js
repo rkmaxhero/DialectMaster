@@ -11,7 +11,8 @@ import CustomButton from './atom/CustomButton';
 import CustomTextInput from './atom/CustomTextInput';
 import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
-import Dashboard from './pages/dashboard'
+import Dashboard from './pages/dashboard';
+import MapPage from './pages/map';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -21,6 +22,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="Map"
+          component={MapPage}
+        />
         <Stack.Screen
           name="Login"
           component={LoginPage}
