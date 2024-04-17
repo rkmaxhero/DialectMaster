@@ -1,6 +1,6 @@
 import { Text, StyleSheet,View, TouchableOpacity} from 'react-native';
 
-import CustomButton from './CustomButton';
+import CustomButton from '../atom/CustomButton';
 
 export default function ProgressBar (props) {
     const progress = props.percent || 0;
