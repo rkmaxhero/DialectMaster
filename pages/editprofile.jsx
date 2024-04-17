@@ -35,6 +35,7 @@ const [inputText, setInputText] = useState('DANIAL JAMES LEUNG');
       */}
 
       <Text style={styles.text}>{inputText}</Text>
+      <Ionicons name="cloud-upload-outline" size={130} color="black" />
 
       <View style={styles.centerAlign}>
       <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} setInputText={setInputText}/>
