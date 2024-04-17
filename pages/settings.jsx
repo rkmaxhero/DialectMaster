@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,14 +10,21 @@ import {
 import Ionicons from '@expo/vector-icons/Ionicons';
 import CustomButton from '../atom/CustomButton';
 
-export default function SettingsPage({navigation}) {
+export default function SettingsPage({navigation, route}) {
+  const [name, setName ] = useState('DANIEL JAMES LEUNG');
   return (
     <SafeAreaView style={styles.centerAlign}>
       <StatusBar></StatusBar>
       <Ionicons name="person" size={150} color="black" />
-      <Text style={styles.text}>DANIEL JAMES LEUNG</Text>
+      <Text style={styles.text}>{name}</Text>
 
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Edit Profile', {
+          onGoBack: (data) => {
+            setName(data)
+          },
+        })}
+      >
         <Text style={styles.editprofile}>Edit Profile</Text>
       </TouchableOpacity>
 

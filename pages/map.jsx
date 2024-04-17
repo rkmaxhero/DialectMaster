@@ -6,7 +6,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-import ProgressBar from '../atom/progressBar';
+import ProgressBar from '../component/progressBar';
 
 export default function MapPage({navigation}) {
   return (

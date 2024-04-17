@@ -15,6 +15,7 @@ import Dashboard from './pages/dashboard';
 import MapPage from './pages/map';
 import SettingsPage from './pages/settings';
 import ContactPage from './pages/contact';
+import EditProfilePage from './pages/editprofile';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -24,9 +25,14 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        
         <Stack.Screen
           name="Settings"
           component={SettingsPage}
+        />
+        <Stack.Screen
+          name="Edit Profile"
+          component={EditProfilePage}
         />
         <Stack.Screen
           name="Contact"
