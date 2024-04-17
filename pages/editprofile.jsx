@@ -12,8 +12,12 @@ import CustomButton from '../atom/CustomButton';
 
 import CustomModal from '../component/modal';
 
+import CustomLangModal from '../component/modalLanguage';
+
 export default function EditProfilePage({navigation, route}) {
 const [modalVisible, setModalVisible] = useState(false);
+
+const [langModal, setLangModal] = useState(false);
 
 const [inputText, setInputText] = useState('DANIAL JAMES LEUNG');
 
@@ -36,6 +40,10 @@ const [inputText, setInputText] = useState('DANIAL JAMES LEUNG');
       <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} setInputText={setInputText}/>
       </View>
 
+      <View>
+        <CustomLangModal modalVisible={langModal} setModalVisible={setLangModal} />
+      </View>
+
       <View style={styles.button}>
         <CustomButton 
           text='change name'
@@ -46,6 +54,7 @@ const [inputText, setInputText] = useState('DANIAL JAMES LEUNG');
       <View style={styles.button}>
         <CustomButton 
           text='change language'
+          onPress={() => setLangModal(true)}
         />
       </View>
 

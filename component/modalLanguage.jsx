@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import { Modal, View, Text, TouchableOpacity, StyleSheet, TextInput} from 'react-native';
 
+import CustomButton from '../atom/CustomButton';
 
-export default function CustomLangModal({ modalVisible, setModalVisible, setInputText }) {
-    const [name, setName] = useState("");
-    const handleSave = () => {
-        setInputText(name); // Update the inputText state in EditProfilePage
-        setModalVisible(false);
-      };
-
+export default function CustomLangModal({ modalVisible, setModalVisible, }) {
   return (
         <Modal
         animationType="slide"
@@ -20,19 +15,29 @@ export default function CustomLangModal({ modalVisible, setModalVisible, setInpu
         >
             <View style={styles.centerAlign}>
                 <View style={styles.modalView}>
-                
-                <TextInput style={styles.textInput}
-                    placeholder="Enter new name"
-                    onChangeText={setName}
-                    value={name}
-                />
 
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={handleSave}
-                >
-                    <Text>Save</Text>
-                </TouchableOpacity>
+                <View style={styles.button2}>
+                <CustomButton
+                text='English'
+                onPress={() => setModalVisible(false)}
+                />
+                </View>
+                
+
+                <View style={styles.button2}>
+                <CustomButton
+                text='British English'
+                onPress={() => setModalVisible(false)}
+                />
+                </View>
+
+                <View style={styles.button2}>
+                <CustomButton 
+                    text='Close'
+                  onPress={() => setModalVisible(false)}
+                />
+                </View>
+                
                 </View>
             </View>
         </Modal>
@@ -47,21 +52,20 @@ const styles = StyleSheet.create({
         flex: 1, 
       },
 
-      button: {
+
+      button2: {
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 24,
         padding: 10,
         paddingHorizontal: 30,
-        marginTop: 10,
-        backgroundColor: '#EEE462'
+        margin: 5,
       },
 
       modalView: {
         margin: 20,
         backgroundColor: "white",
         borderRadius: 20,
-        padding: 35,
+        padding: 10,
         alignItems: "center",
         shadowColor: "#000",
         shadowOffset: {
@@ -70,11 +74,14 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 4,
-        elevation: 5
+        elevation: 5,
+
+        justifyContent: 'space-around',
+
       },
 
       textInput:{
-        backgroundColor: 'lightgrey',
+        backgroundColor: '#FFF',
         width: '100%',
         height: 57,
         borderRadius: 24, 
