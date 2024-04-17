@@ -13,6 +13,7 @@ import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
 import Dashboard from './pages/dashboard';
 import MapPage from './pages/map';
+import SettingsPage from './pages/settings';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -22,6 +23,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        {/* <Stack.Screen
+          name="Settings"
+          component={SettingsPage}
+        /> */}
         <Stack.Screen
           name="Map"
           component={MapPage}
