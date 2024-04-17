@@ -6,14 +6,11 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-import ProgressBar from '../atom/progressBar';
-
-export default function MapPage({navigation}) {
+export default function EditProfilePage({navigation}) {
   return (
     <SafeAreaView style={styles.centerAlign}>
       <StatusBar></StatusBar>
-      Map image here
-      <ProgressBar region='southwest' percent='10' ></ProgressBar>
+        <Text style={styles.text}>Edit Profile</Text>
     </SafeAreaView>
   );
 }
@@ -23,5 +20,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1
-  },
+  }, 
+
+    text: {
+        fontSize: 24,
+        color: 'black',
+        fontWeight: 600,
+        textTransform: 'uppercase',
+    }
 });
