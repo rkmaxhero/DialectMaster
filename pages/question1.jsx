@@ -38,16 +38,16 @@ export default function QuestionSet1({navigation}) {
             <Text style={styles.normalText}>Question 1/7</Text>
             <Text style={styles.normalText}>What does "deadass" mean?</Text>
             <View style={styles.button}>
-              <CorrectButton text='"Seriously"' onPress={() => setTimeout(handleClick, timeoutTime)} />
+              <CorrectButton text='Seriously' onPress={() => setTimeout(handleClick, timeoutTime)} />
             </View>
             <View style={styles.button}>
               <WrongButton text="A dead donkey" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <WrongButton text="A lobster" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <WrongButton text="Completely silent" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <WrongButton text="Dead booty" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <WrongButton text="Fully awake" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
               <IDKButton text ="I don't know" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
@@ -123,24 +123,24 @@ export default function QuestionSet1({navigation}) {
         </SafeAreaView>
       )
     }
-    else if (questionNum == 5) { // TODO
+    else if (questionNum == 5) {
       return (
         <SafeAreaView style={styles.container}>
           <StatusBar></StatusBar>
           <View style={styles.centerAlign}>
             <Text style={styles.normalText}>Question {questionNum}/7</Text>
-            <Text style={styles.normalText}>What does "frappe" mean in New England?</Text>
+            <Text style={styles.normalText}>What's a common New England term for a small grocery store?</Text>
             <View style={styles.button}>
-              <WrongButton text ='A Starbucks drink' onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <WrongButton text ='Bodega' onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <CorrectButton text ="A milkshake" onPress={() => setTimeout(handleClick, timeoutTime)}/>
+              <CorrectButton text ="Packie" onPress={() => setTimeout(handleClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <WrongButton text ="A Greek drink" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <WrongButton text ="Supermarket" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <WrongButton text ="A frappucino" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <WrongButton text ="Corner shop" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
               <IDKButton text ="I don't know" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
@@ -149,24 +149,24 @@ export default function QuestionSet1({navigation}) {
         </SafeAreaView>
       )
     }
-    else if (questionNum == 6) { // TODO
+    else if (questionNum == 6) {
       return (
         <SafeAreaView style={styles.container}>
           <StatusBar></StatusBar>
           <View style={styles.centerAlign}>
             <Text style={styles.normalText}>Question {questionNum}/7</Text>
-            <Text style={styles.normalText}>What does "frappe" mean in New England?</Text>
+            <Text style={styles.normalText}>What's a typical New England term for a sandwich on a long roll?</Text>
             <View style={styles.button}>
-              <WrongButton text ='A Starbucks drink' onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <WrongButton text ='Hoagie' onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <CorrectButton text ="A milkshake" onPress={() => setTimeout(handleClick, timeoutTime)}/>
+              <WrongButton text ="Hero" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <WrongButton text ="A Greek drink" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <CorrectButton text ="Grinder" onPress={() => setTimeout(handleClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <WrongButton text ="A frappucino" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <WrongButton text ="Wrap" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
               <IDKButton text ="I don't know" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
@@ -181,18 +181,18 @@ export default function QuestionSet1({navigation}) {
           <StatusBar></StatusBar>
           <View style={styles.centerAlign}>
             <Text style={styles.normalText}>Question {questionNum}/7</Text>
-            <Text style={styles.normalText}>What does "frappe" mean in New England?</Text>
+            <Text style={styles.normalText}>What's a common New England expression for being annoyed or irritated?</Text>
             <View style={styles.button}>
-              <WrongButton text ='A Starbucks drink' onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <WrongButton text ='Mad' onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <CorrectButton text ="A milkshake" onPress={() => setTimeout(handleClick, timeoutTime)}/>
+              <WrongButton text ="Annoyed" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <WrongButton text ="A Greek drink" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <WrongButton text ="Angry" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
-              <WrongButton text ="A frappucino" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
+              <CorrectButton text ="Wicked pissed" onPress={() => setTimeout(handleClick, timeoutTime)}/>
             </View>
             <View style={styles.button}>
               <IDKButton text ="I don't know" onPress={() => setTimeout(handleWrongClick, timeoutTime)}/>
@@ -206,8 +206,7 @@ export default function QuestionSet1({navigation}) {
         <SafeAreaView style={styles.container}>
           <StatusBar></StatusBar>
           <View style={styles.centerAlign}>
-            <Text style={styles.normalText}>You learned or reviewed {numCorrect} terms!</Text>
-            <Text style={styles.normalText}>What does "frappe" mean in New England?</Text>
+            <Text style={styles.normalText}>You learned {numCorrect} terms!</Text>
             <View style={styles.button}>
               <CustomButton text ="Home" onPress={() => setTimeout(handleHome, timeoutTime)}/>
             </View>

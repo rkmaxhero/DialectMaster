@@ -5,37 +5,47 @@ import {
   View,
   SafeAreaView,
 } from 'react-native';
-import MapView, { Polygon } from 'react-native-maps';
+import React, { useState } from 'react';
 
 import CustomButton from './../atom/CustomButton';
 import CustomTextInput from './../atom/CustomTextInput';
 
-const regions = [
-  { name: "Northeast", coordinates: [
-      { latitude: 46.073230, longitude: -67.345626 },
-      { latitude: 42.039048, longitude: -71.862772 }
-    ], fillColor: 'rgba(0, 0, 255, 0.5)' },
-  // Define other regions similarly
-];
-
 export default function Dashboard({navigation}) {
-  return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar></StatusBar>
-      <View style={styles.centerAlign}>
-        <Text style={styles.normalText}>What dialect do you want to learn today?</Text>
-        <View style={styles.button}>
-          <CustomButton text ="New England" onPress={() => navigation.navigate('Questions')}/>
-        </View>
-        <View style={styles.box}>
-          <Text style={styles.normalText}>Continue learning</Text>
+  const [loading, setLoading] = useState(false);
+  const [completionPercent, setCompletionPercent] = useState(39);
+  function handleClick(page) {
+    setLoading(true);
+    setTimeout(() => navigation.navigate(page), 2000);
+    setTimeout(() => setLoading(false), 2000);
+  }
+
+  if (!loading) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <StatusBar></StatusBar>
+        <View style={styles.centerAlign}>
+          <Text style={styles.normalText}>What dialect do you want to learn today?</Text>
           <View style={styles.button}>
-            <CustomButton text ="New England" onPress={() => navigation.navigate('Questions2')}/>
+            <CustomButton text ="New England" onPress={() => handleClick('Questions')}/>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.normalText}>Continue learning</Text>
+            <View style={styles.button}>
+              <CustomButton text ="New England" onPress={() => handleClick('Questions2')}/>
+            </View>
+            <Text style={styles.normalText}>{completionPercent}%</Text>
           </View>
         </View>
-      </View>
-    </SafeAreaView>
-  );
+      </SafeAreaView>
+    );
+  }
+  else {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.normalText}>Loading...</Text>
+      </SafeAreaView>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
