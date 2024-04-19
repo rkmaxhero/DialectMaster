@@ -1,7 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const ThankYouScreen = ({ onContinue }) => {
+const ThankYouScreen = ({ navigation }) => {
+    const onContinue = () => {
+        navigation.navigate("PremiumFeaturesScreen");
+    };
+
   return (
     <View style={styles.container}>
       <Text style={styles.thankYouText}>Thank you</Text>
