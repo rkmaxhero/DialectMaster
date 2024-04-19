@@ -1,3 +1,5 @@
+// spare questions page in case we need another one
+
 import { StatusBar } from 'expo-status-bar';
 import {
   StyleSheet,

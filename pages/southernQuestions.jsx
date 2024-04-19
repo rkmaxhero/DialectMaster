@@ -1,3 +1,5 @@
+// meant to be a 0 percent starter page
+
 import { StatusBar } from 'expo-status-bar';
 import {
   StyleSheet,
