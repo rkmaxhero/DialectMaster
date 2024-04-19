@@ -10,7 +10,7 @@ const RegionSelectMap = ({navigation}) => {
     <View style={styles.container}>
       {/* Header with menu and search */}
       <View style={styles.header}>
-        <TouchableOpacity style={styles.menuButton}>
+        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('Settings')}>
           <Text style={styles.menuText}>☰</Text>
         </TouchableOpacity>
         <Text style={styles.title}>DIALECT MASTER</Text>

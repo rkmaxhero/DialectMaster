@@ -30,7 +30,6 @@ import ConfirmationScreen from './pages/cnfrm';
 import SurveyPromptScreen from './pages/survey1';
 import SurveyQuestionScreen from './pages/survey2';
 import ThankYouScreen from './pages/thankyou';
-
 import SignUp1 from './pages/signup1';
 
 const Stack = createNativeStackNavigator();
@@ -44,12 +43,12 @@ export default function App() {
           component={MapPage}
         /> */}
         <Stack.Screen
-          name="SignUp1"
-          component={SignUp1}
-        />
-        <Stack.Screen
           name="Login"
           component={LoginPage}
+        />
+        <Stack.Screen
+          name="SignUp1"
+          component={SignUp1}
         />
         <Stack.Screen 
           name="Signup" 

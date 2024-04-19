@@ -16,7 +16,7 @@ export default function SignUp1({navigation}) {
       <Text style={styles.text}>DIALECT MASTER</Text>
       <CustomTextInput label="Type in Email to start"/>
 
-        <TouchableOpacity style={styles.button} onPress={()=> navigation.nagivate("ConfirmationScreen")}>
+        <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("ConfirmationScreen")}>
             <Text style={styles.text}>Submit</Text>
         </TouchableOpacity>
 

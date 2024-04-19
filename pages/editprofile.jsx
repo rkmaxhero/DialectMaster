@@ -62,6 +62,7 @@ const [inputText, setInputText] = useState('DANIAL JAMES LEUNG');
       <View style={styles.button}>
         <CustomButton 
           text='get premium'
+          onPress={() => navigation.navigate("PremiumFeaturesScreen")}
         />
       </View>
 

@@ -11,10 +11,10 @@ import CustomTextInput from './../atom/CustomTextInput';
 
 export default function LoginPage({navigation}) {
   function handleLogin() {
-    navigation.navigate('Home');
+    navigation.navigate('RegionSelectMap');
   }
   function handleRegister() {
-    navigation.navigate('Signup');
+    navigation.navigate('SignUp1');
   }
   return (
     <SafeAreaView style={styles.container}>

@@ -46,7 +46,7 @@ const SelectedRegionScreen = ({navigation, route }) => {
     <View style={styles.container}>
       {/* Header with menu and search */}
       <View style={styles.header}>
-        <TouchableOpacity style={styles.menuButton}>
+        <TouchableOpacity style={styles.menuButton}  onPress={() => navigation.navigate('Settings')}>
           <Text style={styles.menuText}>☰</Text>
         </TouchableOpacity>
         <Text style={styles.title}>DIALECT MASTER</Text>
@@ -168,14 +168,14 @@ const styles = StyleSheet.create({
   },
   northwestRegion: {
     // Position and size for the northwest region based on your map image
-    top: '23%', // Adjust these percentages to match the region's position on your map image
+    top: '21%', // Adjust these percentages to match the region's position on your map image
     left: '80%',
     width: '15%',
     height: "25%",
   },
   southwestRegion: {
     // Similarly for the southwest region
-    top: "55%",
+    top: "58%",
     left: "45%",
     width: "25%",
     height: "30%",

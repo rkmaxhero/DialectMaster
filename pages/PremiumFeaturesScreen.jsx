@@ -33,10 +33,10 @@ const PremiumFeaturesScreen = ({navigation}) => {
       <Text style={styles.subtitle}>
         WITH DIALECT MASTER PREMIUM YOU CAN...
       </Text>
-      <TouchableOpacity style={styles.featureButton}>
+      <TouchableOpacity style={styles.featureButton} onPress={()=> navigation.navigate('Contact')}>
         <Text style={styles.featureText}>Remove any advertisements!</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.featureButton}>
+      <TouchableOpacity style={styles.featureButton} onPress={()=> navigation.navigate('Contact')}>
         <Text style={styles.featureText}>
           Get access to our exclusive ChatBot
         </Text>
@@ -45,7 +45,7 @@ const PremiumFeaturesScreen = ({navigation}) => {
       <Text style={styles.timerText}>
         offer expires in {formatTime(timer)}
       </Text>
-      <TouchableOpacity style={styles.featureButton} >
+      <TouchableOpacity style={styles.featureButton}  onPress={()=> navigation.navigate('Contact')}>
         <Text style={styles.featureText}>SURE!</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.featureButton} onPress={handlePurchase}>
