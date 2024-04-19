@@ -38,10 +38,6 @@ export default function App() {
           component={MapPage}
         /> */}
         <Stack.Screen
-          name = "RegionSelectMap"
-          component = {RegionSelectMap}
-        />
-        <Stack.Screen
           name="Login"
           component={LoginPage}
         />
@@ -76,6 +72,10 @@ export default function App() {
         <Stack.Screen
           name = "SelectedRegionScreen"
           component = {SelectedRegionScreen}
+        />
+        <Stack.Screen
+          name = "RegionSelectMap"
+          component = {RegionSelectMap}
         />
         
         <Stack.Screen
