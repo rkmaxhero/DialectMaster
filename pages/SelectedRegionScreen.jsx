@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import * as Progress from 'react-native-progress';
 import CustomButton from '../atom/CustomButton';
+import ProgressBar from '../component/progressBar';
 
 const SelectedRegionScreen = ({navigation, route}) => {
   // console.log(route.params);
@@ -51,7 +52,7 @@ const SelectedRegionScreen = ({navigation, route}) => {
           {/* <Text style={styles.searchText} onPress = {() => navigation.navigate('PremiumFeaturesScreen')}>🔍</Text> */}
         </TouchableOpacity>
       </View>
-
+      
       {/* Placeholder for map */}
       <View style={styles.mapContainer}>
         {/* Map Image */}
@@ -69,28 +70,8 @@ const SelectedRegionScreen = ({navigation, route}) => {
         {/* ... Additional regions here ... */}
       </View>
 
-      {/* Selected region display */}
-      <View style={styles.selectedRegionContainer}>
-        <Text style={styles.selectedRegionText}>{selectedRegion}</Text>
-        <Progress.Bar
-          progress={selectedRegion.progress}
-          width={500}
-          height={30}
-          color={'#0000FF'} // Blue color for the progress bar
-          backgroundColor = {'#000000'}
-        />
-        <Text style={styles.progressText}>{progress}%</Text>
-      </View>
+      <ProgressBar region={selectedRegion} percent={progress} onPressLearning={() => navigation.navigate('Contact')} onPressTest={() => navigation.navigate('Settings') }></ProgressBar>
 
-      {/* Buttons */}
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => handleRegionSelect('Southwest Region')}>
-        <Text style={styles.buttonText}>START LEARNING</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>TEST</Text>
-      </TouchableOpacity>
     </View>
   );
 };
@@ -122,12 +103,6 @@ const styles = StyleSheet.create({
   },
   searchText: {
     fontSize: 24,
-  },
-  mapContainer: {
-    // Add styles for map container
-    height: 200, // Temporary height for the placeholder
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   mapPlaceholderText: {
     // This is just a placeholder style
@@ -171,7 +146,7 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   mapImage: {
-    width: '50%', // Ensures the image takes full width of its container
+    width: '100%', // Ensures the image takes full width of its container
     height: '100%', // Ensures the image takes full height of its container
     resizeMode: 'stretch', // Ensures the entire map is visible and aspect ratio is maintained
   },
