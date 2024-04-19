@@ -26,6 +26,8 @@ import SearchScreen from './pages/SearchScreen';
 import PremiumFeaturesScreen from './pages/PremiumFeaturesScreen';
 import SelectedRegionScreen from './pages/SelectedRegionScreen';
 import RegionSelectMap from './pages/RegionSelectMap';
+import ConfirmationScreen from './pages/cnfrm';
+import SurveyPromptScreen from './pages/survey1';
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +43,11 @@ export default function App() {
           name="Login"
           component={LoginPage}
         />
+        <Stack.Screen
+          name = "RegionSelectMap"
+          component = {RegionSelectMap}
+        />
+        
         <Stack.Screen 
           name="Signup" 
           component={SignupPage} 
@@ -89,6 +96,14 @@ export default function App() {
         <Stack.Screen
           name="Contact"
           component={ContactPage}
+        />
+        <Stack.Screen
+          name="ConfirmationScreen"
+          component={ConfirmationScreen}
+        />
+        <Stack.Screen
+          name = "SurveyPromptScreen"
+          component={SurveyPromptScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
