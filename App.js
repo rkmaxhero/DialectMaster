@@ -11,13 +11,21 @@ import CustomButton from './atom/CustomButton';
 import CustomTextInput from './atom/CustomTextInput';
 import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
-import Dashboard from './pages/dashboard'
+import Dashboard from './pages/dashboard';
+import MapPage from './pages/map';
+import SettingsPage from './pages/settings';
+import ContactPage from './pages/contact';
+import EditProfilePage from './pages/editprofile';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import QuestionSet1 from './pages/question1';
 import QuestionSet2 from './pages/question2';
 import Question3 from './pages/question3';
 import SouthernQuestions from './pages/southernQuestions';
+import SearchScreen from './pages/SearchScreen';
+import PremiumFeaturesScreen from './pages/PremiumFeaturesScreen';
+import SelectedRegionScreen from './pages/SelectedRegionScreen';
+import RegionSelectMap from './pages/RegionSelectMap';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +33,23 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        
+        <Stack.Screen
+          name="Settings"
+          component={SettingsPage}
+        />
+        <Stack.Screen
+          name="Edit Profile"
+          component={EditProfilePage}
+        />
+        <Stack.Screen
+          name="Contact"
+          component={ContactPage}
+        />
+        <Stack.Screen
+          name="Map"
+          component={MapPage}
+        />
         <Stack.Screen
           name="Login"
           component={LoginPage}
@@ -48,6 +73,22 @@ export default function App() {
         <Stack.Screen 
           name="South"
           component={SouthernQuestions}
+        />
+        <Stack.Screen
+          name = "SearchScreen"
+          component = {SearchScreen}
+        />
+        <Stack.Screen
+          name = "PremiumFeaturesScreen"
+          component = {PremiumFeaturesScreen}
+        />
+        <Stack.Screen
+          name = "SelectedRegionScreen"
+          component = {SelectedRegionScreen}
+        />
+        <Stack.Screen
+          name = "RegionSelectMap"
+          component = {RegionSelectMap}
         />
       </Stack.Navigator>
     </NavigationContainer>
