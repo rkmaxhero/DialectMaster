@@ -28,11 +28,11 @@ const RegionSelectMap = ({navigation}) => {
         {/* Overlay Touchable Regions */}
         <TouchableOpacity
           style={[styles.region, styles.northwestRegion]} // Positioning styles specific to the northwest region
-          onPress={() => navigation.navigate('SelectedRegionScreen', {name: 'NORTHEAST REGION'})}
+          onPress={() => navigation.navigate('SelectedRegionScreen', {name: 'NORTHEAST REGION', progress:99} )}
         />
         <TouchableOpacity
           style={[styles.region, styles.southwestRegion]} // Positioning styles specific to the southwest region
-          onPress={() => navigation.navigate('SelectedRegionScreen', {name: 'SOUTHWEST REGION'})}
+          onPress={() => navigation.navigate('SelectedRegionScreen', {name: 'SOUTHWEST REGION', progress:0})}
         />
         {/* ... Additional regions here ... */}
       </View>
@@ -117,8 +117,8 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   mapImage: {
-    width: '50%', // Ensures the image takes full width of its container
-    height: '500px', // Ensures the image takes full height of its container
+    width: '100%', // Ensures the image takes full width of its container
+    height: '400px', // Ensures the image takes full height of its container
     resizeMode: 'stretch', // Ensures the entire map is visible and aspect ratio is maintained
   },
   region: {
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   northwestRegion: {
     // Position and size for the northwest region based on your map image
     top: '23%', // Adjust these percentages to match the region's position on your map image
-    left: '60%',
+    left: '80%',
     width: '15%',
     height: "25%",
   },

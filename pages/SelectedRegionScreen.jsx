@@ -4,12 +4,13 @@ import * as Progress from 'react-native-progress';
 import CustomButton from '../atom/CustomButton';
 import ProgressBar from '../component/progressBar';
 
-const SelectedRegionScreen = ({navigation, route}) => {
+const SelectedRegionScreen = ({navigation, route }) => {
   // console.log(route.params);
   const [selectedRegion, setSelectedRegion] = useState('');
   useEffect(() => {
     if (route.params.name) {
       setSelectedRegion(route.params.name);
+      setProgress(route.params.progress);
     }
   }, [route.params.name]);
   const [progress, setProgress] = useState(0); // This should be dynamic based on user's progress
@@ -27,9 +28,11 @@ const SelectedRegionScreen = ({navigation, route}) => {
     setSelectedRegion(regionName);
     if (regionName == 'NORTHEAST REGION') {
       regionName = 'northwestRegion';
+      setProgress(99);
     }
     else{
       regionName = 'southwestRegion';
+      setProgress(0);
     }
     setRegionOpacity((prevOpacity) => ({
       ...prevOpacity,
@@ -70,7 +73,7 @@ const SelectedRegionScreen = ({navigation, route}) => {
         {/* ... Additional regions here ... */}
       </View>
 
-      <ProgressBar region={selectedRegion} percent={progress} onPressLearning={() => navigation.navigate('Contact')} onPressTest={() => navigation.navigate('Settings') }></ProgressBar>
+      <ProgressBar region={selectedRegion} percent={progress} onPressLearning={() => navigation.navigate('Questions')} onPressTest={() => navigation.navigate('South') }></ProgressBar>
 
     </View>
   );
@@ -166,7 +169,7 @@ const styles = StyleSheet.create({
   northwestRegion: {
     // Position and size for the northwest region based on your map image
     top: '23%', // Adjust these percentages to match the region's position on your map image
-    left: '60%',
+    left: '80%',
     width: '15%',
     height: "25%",
   },
