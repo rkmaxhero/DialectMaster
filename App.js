@@ -27,6 +27,8 @@ import PremiumFeaturesScreen from './pages/PremiumFeaturesScreen';
 import SelectedRegionScreen from './pages/SelectedRegionScreen';
 import RegionSelectMap from './pages/RegionSelectMap';
 
+import SignUp1 from './pages/signup1';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -37,6 +39,10 @@ export default function App() {
           name="Map"
           component={MapPage}
         /> */}
+        <Stack.Screen
+          name="SignUp1"
+          component={SignUp1}
+        />
         <Stack.Screen
           name="Login"
           component={LoginPage}
