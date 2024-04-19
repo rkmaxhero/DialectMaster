@@ -26,7 +26,7 @@ export default function SouthernQuestions({navigation}) {
       setQuestionNum(questionNum + 1)
     }
     function handleHome() {
-      navigation.navigate('Home')
+      navigation.navigate('RegionSelectMap')
     }
     function handleNextSet() {
       navigation.navigate('Questions2')

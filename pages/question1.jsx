@@ -24,7 +24,7 @@ export default function QuestionSet1({navigation}) {
       setQuestionNum(questionNum + 1)
     }
     function handleHome() {
-      navigation.navigate('Home')
+      navigation.navigate('RegionSelectMap')
     }
     function handleNextSet() {
       navigation.navigate('Questions2')

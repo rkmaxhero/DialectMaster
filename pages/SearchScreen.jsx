@@ -5,10 +5,12 @@ const DATA = [
   {
     id: 'northeast',
     title: 'NORTHEAST REGION',
+    progress: 99
   },
   {
     id: 'southwest',
     title: 'SOUTHWEST REGION',
+    progress: 0
   },
 ];
 
@@ -37,9 +39,9 @@ const SearchScreen = ({navigation}) => {
     console.log('Selected: ', item.title);
   };
 
-  const Item = ({ id, title, navigation }) => (
+  const Item = ({ id, title, progress, navigation }) => (
     <TouchableOpacity
-      onPress={() => navigation.navigate('SelectedRegionScreen',{name: title})}
+      onPress={() => navigation.navigate('SelectedRegionScreen',{name: title, progress: progress})}
       style={styles.item}
     >
       <Text style={styles.title}>{title}</Text>
@@ -47,7 +49,7 @@ const SearchScreen = ({navigation}) => {
   );
   
   const renderItem = ({ item }) => (
-    <Item id={item.id} title={item.title} navigation={navigation} />
+    <Item id={item.id} title={item.title} progress={item.progress} navigation={navigation} />
   );
 
   return (
