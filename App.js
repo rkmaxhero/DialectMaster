@@ -33,22 +33,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        
-        <Stack.Screen
-          name="Settings"
-          component={SettingsPage}
-        />
-        <Stack.Screen
-          name="Edit Profile"
-          component={EditProfilePage}
-        />
-        <Stack.Screen
-          name="Contact"
-          component={ContactPage}
-        />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Map"
           component={MapPage}
+        /> */}
+        <Stack.Screen
+          name = "RegionSelectMap"
+          component = {RegionSelectMap}
         />
         <Stack.Screen
           name="Login"
@@ -86,9 +77,18 @@ export default function App() {
           name = "SelectedRegionScreen"
           component = {SelectedRegionScreen}
         />
+        
         <Stack.Screen
-          name = "RegionSelectMap"
-          component = {RegionSelectMap}
+          name="Settings"
+          component={SettingsPage}
+        />
+        <Stack.Screen
+          name="Edit Profile"
+          component={EditProfilePage}
+        />
+        <Stack.Screen
+          name="Contact"
+          component={ContactPage}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -6,7 +6,7 @@ export default function ProgressBar (props) {
     const progress = props.percent || 0;
     return (
         <View style={styles.container}>
-        <Text style={styles.buttonText}>{props.region} REGION</Text>
+        <Text style={styles.buttonText}>{props.region}</Text>
 
         <View style={styles.progressBarOuter}>
             <View style={{...styles.progressBarInner, width: `${progress}%`}}>
@@ -15,11 +15,11 @@ export default function ProgressBar (props) {
 
         <Text style={styles.buttonText}>{progress} %</Text>
 
-        <TouchableOpacity style={styles.button} activeOpacity={0.75} onPress={props.onPress}>
+        <TouchableOpacity style={styles.button} activeOpacity={0.75} onPress={props.onPressLearning}>
         <Text style={styles.buttonText}>{progress > 0 ? 'Continue learning' : 'Start learning'}</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} activeOpacity={0.75} onPress={props.onPress}>
+        <TouchableOpacity style={styles.button} activeOpacity={0.75} onPress={props.onPressTest}>
         <Text style={styles.buttonText}>test</Text>
         </TouchableOpacity>
         
@@ -30,10 +30,10 @@ export default function ProgressBar (props) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#EEE462',
-        width: '100%',
-        height: '45%',
         justifyContent: 'space-around', 
         alignItems: 'center',
+        padding: 10,
+        marginTop: 100,
     },
 
     button: {
@@ -45,10 +45,11 @@ const styles = StyleSheet.create({
     
         width: '85%',
         padding: 10,
+        marginTop: 15,
       },
 
       buttonText: {
-        fontSize: 24,
+        fontSize: 18,
         color: 'black',
         fontWeight: 600,
         textTransform: 'uppercase',
