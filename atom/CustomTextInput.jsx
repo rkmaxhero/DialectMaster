@@ -1,14 +1,14 @@
-import { StyleSheet, TextInput, Text} from 'react-native';
+import { StyleSheet, TextInput, Text, View} from 'react-native';
 
 
 export default function (props) {
     return(
-        <>
+        <View>
         <Text style={styles.label}>{props.label}</Text>
         <TextInput style={styles.field} textAlign={'center'}>{props.placeholder}</TextInput>
-        </>
+        </View>
     );
-}
+}   
 
 const styles = StyleSheet.create({
     field: {
