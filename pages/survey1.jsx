@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 const SurveyPromptScreen = ({ navigation }) => {
   // Handle the OK action
   const handleOkay = () => {
-    
+    navigation.navigate("SurveyQuestionScreen");
   };
 
   return (

@@ -28,6 +28,7 @@ import SelectedRegionScreen from './pages/SelectedRegionScreen';
 import RegionSelectMap from './pages/RegionSelectMap';
 import ConfirmationScreen from './pages/cnfrm';
 import SurveyPromptScreen from './pages/survey1';
+import SurveyQuestionScreen from './pages/survey2';
 
 const Stack = createNativeStackNavigator();
 
@@ -104,6 +105,10 @@ export default function App() {
         <Stack.Screen
           name = "SurveyPromptScreen"
           component={SurveyPromptScreen}
+        />
+        <Stack.Screen
+          name = "SurveyQuestionScreen"
+          component={SurveyQuestionScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

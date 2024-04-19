@@ -11,7 +11,7 @@ import CustomTextInput from './../atom/CustomTextInput';
 
 export default function SignupPage({navigation}) {
   function handleRegister() {
-    navigation.navigate('Home');
+    navigation.navigate('ConfirmationScreen');
   }
   function handleLogin() {
     navigation.navigate('Login');
