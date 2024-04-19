@@ -17,6 +17,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import QuestionSet1 from './pages/question1';
 import QuestionSet2 from './pages/question2';
 import Question3 from './pages/question3';
+import SouthernQuestions from './pages/southernQuestions';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +44,10 @@ export default function App() {
         <Stack.Screen 
           name="Questions2"
           component={QuestionSet2}
+        />
+        <Stack.Screen 
+          name="South"
+          component={SouthernQuestions}
         />
       </Stack.Navigator>
     </NavigationContainer>
