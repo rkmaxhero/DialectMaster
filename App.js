@@ -14,6 +14,10 @@ import SignupPage from './pages/signup';
 import Dashboard from './pages/dashboard'
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import SearchScreen from './pages/SearchScreen';
+import PremiumFeaturesScreen from './pages/PremiumFeaturesScreen';
+import SelectedRegionScreen from './pages/SelectedRegionScreen';
+import RegionSelectMap from './pages/RegionSelectMap';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +36,22 @@ export default function App() {
         <Stack.Screen
           name="Dialect Master"
           component={Dashboard}
+        />
+        <Stack.Screen
+          name = "SearchScreen"
+          component = {SearchScreen}
+        />
+        <Stack.Screen
+          name = "PremiumFeaturesScreen"
+          component = {PremiumFeaturesScreen}
+        />
+        <Stack.Screen
+          name = "SelectedRegionScreen"
+          component = {SelectedRegionScreen}
+        />
+        <Stack.Screen
+          name = "RegionSelectMap"
+          component = {RegionSelectMap}
         />
       </Stack.Navigator>
     </NavigationContainer>
