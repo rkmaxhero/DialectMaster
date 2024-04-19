@@ -29,9 +29,6 @@ export default function LoginPage({navigation}) {
         <View style={styles.button}>
           <CustomButton text ="sign up" onPress={() => navigation.navigate('Signup')}/>
         </View>
-        <View>
-          <CustomButton text = "DEBUG" onPress = {() => navigation.navigate('PremiumFeaturesScreen')}/>
-        </View>
       </View>
     </SafeAreaView>
   );
