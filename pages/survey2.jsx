@@ -1,14 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const SurveyQuestionScreen = ({ onSelection }) => {
+const SurveyQuestionScreen = ({ navigation }) => {
   // Define the options
   const options = ['PROFESSIONAL', 'PERSONAL', 'TRAVELLING', 'PRACTICE'];
 
   // Handle selection
   const handleSelectOption = (option) => {
-    // Implement what happens when an option is selected
-    // Example: onSelection(option);
+    navigation.navigate("ThankYouScreen");
   };
 
   return (

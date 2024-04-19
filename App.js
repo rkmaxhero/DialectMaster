@@ -29,6 +29,7 @@ import RegionSelectMap from './pages/RegionSelectMap';
 import ConfirmationScreen from './pages/cnfrm';
 import SurveyPromptScreen from './pages/survey1';
 import SurveyQuestionScreen from './pages/survey2';
+import ThankYouScreen from './pages/thankyou';
 
 import SignUp1 from './pages/signup1';
 
@@ -50,11 +51,6 @@ export default function App() {
           name="Login"
           component={LoginPage}
         />
-        <Stack.Screen
-          name = "RegionSelectMap"
-          component = {RegionSelectMap}
-        />
-        
         <Stack.Screen 
           name="Signup" 
           component={SignupPage} 
@@ -115,6 +111,10 @@ export default function App() {
         <Stack.Screen
           name = "SurveyQuestionScreen"
           component={SurveyQuestionScreen}
+        />
+        <Stack.Screen
+          name = "ThankYouScreen"
+          component={ThankYouScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
