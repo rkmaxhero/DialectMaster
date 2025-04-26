@@ -1,3 +1,6 @@
+Demo Pitch:
+https://youtu.be/EdHLrHV1i34?si=AWd1sE29Smgul2pi&t=163
+
 TODO: 
 - Add app routing
     - REF: https://reactnative.dev/docs/navigation (built in solution)
